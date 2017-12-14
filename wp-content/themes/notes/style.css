@@ -1,0 +1,548 @@
+/*  
+Theme Name: My Notes 
+Theme URI: http://justfreethemes.com/my-notes-free-wordpress-theme/
+Description: My Notes is a free WordPress theme for your personal blogs and diaries. it comes with a clean & minimal layout which will resize according to your screen. My Notes can be easily customized, and is a lightweight, seo friendly and a fast loading theme.
+Version: 1.1
+Author: JustFreeThemes.com 
+Author URI: http://justfreethemes.com
+Tags: white, gray, light, one-column, fluid-layout, threaded-comments, custom-background, custom-menu, sticky-post
+Text Domain : my_notes
+
+License: GNU General Public License v2.0
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+*/
+
+/*! normalize.css v2.1.2 | MIT License | git.io/normalize */
+
+/* ==========================================================================
+   HTML5 display definitions
+   ========================================================================== */
+
+   /**
+ * Correct `block` display not defined in IE 8/9.
+ */
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+display : block;
+}
+audio, canvas, video {
+display : inline-block;
+}
+audio:not([controls]) {
+display : none;
+height : 0;
+}
+[hidden] {
+display : none;
+}
+html {
+font-family : sans-serif;
+}
+body {
+margin : 0;
+}
+a:focus {
+outline : none;
+}
+a:active, a:hover {
+outline : 0;
+}
+abbr[title] {
+border-bottom : 1px dotted;
+}
+b, strong {
+font-weight : bold;
+}
+dfn {
+font-style : italic;
+}
+hr {
+box-sizing : content-box;
+height : 0;
+}
+mark {
+background : #ff0;
+color : #000;
+}
+code, kbd, pre, samp {
+font-family : monospace, serif;
+font-size : 1em;
+}
+pre {
+white-space : pre-wrap;
+}
+q {
+quotes : "\201C" "\201D" "\2018" "\2019";
+}
+small {
+font-size : 80%;
+}
+sub, sup {
+font-size : 75%;
+line-height : 0;
+position : relative;
+vertical-align : baseline;
+}
+sup {
+top : -0.5em;
+}
+sub {
+bottom : -0.25em;
+}
+img {
+border : 0;
+}
+svg:not(:root) {
+overflow : hidden;
+}
+figure {
+margin : 0;
+}
+fieldset {
+border : #c0c0c0 solid 1px;
+margin : 0 2px;
+padding : 0.35em 0.625em 0.75em;
+}
+legend {
+border : 0;
+padding : 0;
+}
+button, input, select, textarea {
+font-family : inherit;
+font-size : 100%;
+margin : 0;
+}
+button, input {
+line-height : normal;
+}
+button, select {
+text-transform : none;
+}
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+cursor : pointer;
+}
+button[disabled], html input[disabled] {
+cursor : default;
+}
+input[type="checkbox"], input[type="radio"] {
+box-sizing : border-box;
+padding : 0;
+}
+input[type="search"] {
+box-sizing : content-box;
+}
+button::-moz-focus-inner, input::-moz-focus-inner {
+border : 0;
+padding : 0;
+}
+textarea {
+overflow : auto;
+vertical-align : top;
+}
+table {
+border-collapse : collapse;
+border-spacing : 0;
+}
+:focus {
+outline : none;
+}
+::-moz-focus-inner {
+border : 0;
+}
+body {
+background:#f8f8f8;
+margin:0;
+padding:0;
+line-height: 2em;
+color: #000;
+font-size: 15px;
+font-family: cursive, 'Comic Sans MS';
+min-width:300px;
+overflow-wrap : break-word;
+}
+p {
+margin : 0 0 15px;
+}
+a {
+text-decoration : none;
+color : #1599F1;
+}
+a:hover {
+text-decoration : underline;
+}
+h1, h2, h3, h4, h5, h6 {
+font-weight : bold;
+}
+h1 {
+font-size : 26px;
+}
+h2 {
+font-size : 22px;
+}
+h3 {
+font-size : 18px;
+}
+h4 {
+font-size : 16px;
+}
+h5 {
+font-size : 15px;
+}
+h6 {
+font-size : 14px;
+}
+ul {
+list-style : none;
+margin : 0;
+padding : 0;
+}
+
+#wrapper { width:98%; margin:4% auto; max-width:700px;}
+#header { margin:2%; text-align:center; text-transform:uppercase;}
+#nav { margin:4% 2%; padding:0; text-align:center;}
+#main { margin:5% 2%;}
+#sidebar { margin: 2% 2%;}
+#footer { margin:2%; text-align:center;}
+.clear {
+clear : both;
+margin : 0;
+padding : 0;
+}
+
+#header h1 {font-size:30px; margin:0; padding:0;}
+a.blog-title {
+color: #000;
+font-weight: bold;
+font-size: 30px;
+line-height: 35px;
+display:block;
+margin:0 0 10px;
+}
+a.blog-title:hover {text-decoration:none; color:#666;}
+.desc {font-size: 12px;}
+
+#nav ul {margin:0; padding:0;}
+#nav ul li { list-style:none; display:inline-block; margin:10px 5px;}
+#nav ul li a { color:#ddd; padding:10px 15px; background:#555;}
+#nav ul li a:hover {background:#222; text-decoration:none;}
+
+#main .post,#main .page,#main  .hentry {
+    background: #fff;
+	margin-bottom:40px;
+}
+.entry {
+    padding: 20px;
+    margin: 0 0 0 92px;
+    border-left: 4px double #fd0;
+font-size: 105%;
+line-height: 2.2em;
+}
+.entry ol {
+list-style: decimal;
+margin: 0 0 20px 50px;
+padding: 0;
+}
+.entry ul {
+list-style: disc;
+margin: 0 0 20px 50px;
+}
+.entry blockquote {
+background : #efefef;
+padding : 20px;
+border-left : 8px solid #dedede;
+font-style : italic;
+line-height : 2em;
+font-weight : bold;
+font-size : 16px;
+margin : 0 0 20px 0;
+}
+blockquote p {
+margin : 0;
+}
+cite {
+font-size : 14px;
+font-weight : normal;
+}
+.entry img, .entry iframe, .commentlist img, .commentlist iframe {
+max-width : 536px;
+}
+.entry img {
+margin: 1em 0;
+height:auto;
+}
+ .commentlist img {
+height:auto;
+}
+p.paged {
+display : block;
+clear : both;
+}
+.post-top {background:#fff; border-bottom:4px double #fd0;}
+.post-date {float: left;
+text-align: center;
+width: 52px;
+padding: 15px 20px;
+}
+.post-title {
+padding: 30px 20px;
+font-size: 30px;
+border-left: 4px double #fd0;
+margin: 0 0 0 92px;
+line-height:35px;
+}
+.post-title a {
+    color: #000;
+}
+.post-title a:hover {text-decoration:none; color:#1599F1;}
+.post-meta {
+    padding: 0;
+}
+
+.page-title {background:#f0f0f0; color:#000; font-weight:bold; font-size:20px; padding:20px; margin:10px 0 20px 0;}
+
+.widget {
+    width: 100%;
+    text-align: center;
+    margin: 0 0 1em;
+}
+.widget-title {
+    font-weight: bold;
+}
+.widget img {max-width:100%; height:auto;}
+
+.bottom-search {text-align:center;}
+.screen-reader-text {
+    display: none;
+}
+.a-right {
+    float: right;
+}
+.a-left {
+    float: left;
+}
+
+.alignleft, img.alignleft {
+display : inline;
+float : left;
+margin-right : 1.5em;
+margin-bottom : 1.5em;
+}
+.alignright, img.alignright {
+display : inline;
+float : right;
+margin-left : 1.5em;
+margin-bottom : 1.5em;
+}
+.aligncenter, img.aligncenter {
+clear : both;
+display : block;
+margin-left : auto;
+margin-right : auto;
+}
+.alignnone {display:block;}
+.wp-caption {
+text-align: center;
+margin-bottom: 1.5em;
+max-width: 526px;
+background: #eee;
+padding: 5px 5px 0;
+}
+.wp-caption img {
+max-width : 526px;
+border : none 0;
+margin : 0;
+padding : 0;
+}
+.wp-caption p.wp-caption-text {
+margin : 0;
+background : #eee;
+padding : 0;
+font-size : 13px;
+}
+.wp-smiley {
+max-height : 1em;
+margin : 0 !important ;
+}
+.tiled-gallery {
+margin-bottom: 20px !important;
+}
+.gallery {
+margin: 0 auto 20px auto !important;
+clear:both;
+}
+.gallery dl {
+margin : 0;
+}
+.gallery-caption {
+margin : 0;
+font-size : 13px;
+line-height : 1.8em;
+}
+.navigation2 {
+margin: 15px 0;
+}
+.navigation3 {
+margin: 0;
+}
+.sticky {}
+h3#comments {
+padding : 10px 0;
+}
+#respond {
+padding : 10px 0;
+}
+.comment-notes {
+margin-top : 10px;
+}
+#commentform label {
+font-size : 12px;
+font-weight : bold;
+}
+#commentform .comment-form-author, #commentform .comment-form-email, #commentform .comment-form-url {
+width : 240px;
+max-width : 70%;
+}
+#commentform input {
+display:block;
+width: 200px;
+padding: 5px;
+border: 1px solid #ccc;
+background:#fff;
+color: #666;
+margin: 5px 0 0;
+}
+#commentform textarea {
+width : 70%;
+display:block;
+max-width : 100%;
+padding : 10px;
+border: 1px solid #ccc;
+background:#fff;
+color: #666;
+margin: 5px 0 0;
+}
+#commentform #submit {
+background: #1599F1;
+border: 0;
+width: auto;
+padding: 10px 20px;
+color: #fff;
+}
+#commentform #submit:hover {
+    background: #32a8f7;
+}
+.comment-navigation {
+font-size : 12px;
+}
+.nav-next {
+text-align : right;
+}
+.form-allowed-tags {
+display : none;
+}
+span.required {
+color : #F00;
+}
+.commentlist .reply {
+text-align : right;
+}
+.commentlist .vcard cite.fn {
+display : block;
+padding-top : 17px;
+font-weight : bold;
+font-style : normal;
+line-height : 1em;
+text-transform : capitalize;
+}
+.commentlist .vcard span.says {
+display : none;
+}
+.commentlist .vcard img.avatar {
+float : left;
+margin : 0 10px 10px 0;
+}
+.commentlist .comment-meta {
+margin-bottom : 5px;
+}
+.commentlist .commentmetadata a {
+font-size : 12px;
+color : #aaa;
+}
+.comment-awaiting-moderation {
+color : #f00;
+font-size : 12px;
+}
+.commentlist .bypostauthor {
+padding : 10px;
+background : #f6f6f6;
+}
+ol.commentlist {
+margin : 0 !important ;
+list-style : none !important ;
+padding : 10px 0;
+}
+.commentlist li {
+margin : 0 0 20px 0;
+list-style : none;
+}
+.commentlist li p {
+margin : 0 0 5px 0;
+}
+.commentlist li ul {
+margin : 20px 0 0 40px;
+}
+.comment-body li {
+    list-style: disc !important;
+}
+.nocomments {
+padding : 30px 0;
+}
+.pingback cite {
+line-height : 1.5em !important ;
+}
+.error-title {
+text-transform : uppercase;
+font-weight : bold;
+text-align : center;
+font-size : 40px;
+margin : 50px 30px;
+}
+.error-desc {
+font-size : 19px;
+margin : 0 20px;
+line-height : 35px;
+}
+.error-desc input#s {
+float : left;
+margin-left : 85px;
+margin-right : 5px;
+margin-top : 10px;
+}
+.error-desc #searchsubmit {
+margin-top : 9px;
+}
+.error-desc ol {
+list-style : decimal;
+margin : 10px 0;
+}
+.error-desc ol li {
+margin : 0 0 5px 70px;
+}
+.post table {
+width : auto;
+border : #ddd solid 1px;
+margin-bottom : 15px;
+border-collapse : collapse;
+margin : 10px 0;
+}
+.post th, .post td {
+width : auto;
+border : #ddd solid 1px;
+padding : 10px 20px;
+}
+.post th {
+font-weight : bold;
+}
+caption {
+font-weight : bold;
+}
